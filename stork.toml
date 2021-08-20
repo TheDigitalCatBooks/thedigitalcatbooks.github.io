@@ -1,0 +1,69 @@
+[input]
+base_directory = "/home/leo/devel/thedigitalcatbooks/pelican/output"
+url_prefix = "https://www.thedigitalcatbooks.com"
+html_selector = "section#content"
+[[input.files]]
+path = "pages/about.html"
+url = "pages/about.html"
+title = "About"
+
+[[input.files]]
+path = "pycabook-about-the-book/index.html"
+url = "pycabook-about-the-book/"
+title = "About the book"
+
+[[input.files]]
+path = "pycabook-changelog/index.html"
+url = "pycabook-changelog/"
+title = "Changelog"
+
+[[input.files]]
+path = "pycabook-chapter-01/index.html"
+url = "pycabook-chapter-01/"
+title = "Chapter 1 - A day in the life of a clean system"
+
+[[input.files]]
+path = "pycabook-chapter-02/index.html"
+url = "pycabook-chapter-02/"
+title = "Chapter 2 - Components of a clean architecture"
+
+[[input.files]]
+path = "pycabook-chapter-03/index.html"
+url = "pycabook-chapter-03/"
+title = "Chapter 3 - A basic example"
+
+[[input.files]]
+path = "pycabook-chapter-04/index.html"
+url = "pycabook-chapter-04/"
+title = "Chapter 4 - Add a web application"
+
+[[input.files]]
+path = "pycabook-chapter-05/index.html"
+url = "pycabook-chapter-05/"
+title = "Chapter 5 - Error management"
+
+[[input.files]]
+path = "pycabook-chapter-06/index.html"
+url = "pycabook-chapter-06/"
+title = "Chapter 6 - Integration with a real external system - Postgres"
+
+[[input.files]]
+path = "pycabook-chapter-07/index.html"
+url = "pycabook-chapter-07/"
+title = "Chapter 7 - Integration with a real external system - MongoDB"
+
+[[input.files]]
+path = "pycabook-chapter-08/index.html"
+url = "pycabook-chapter-08/"
+title = "Chapter 8 - Run a production-ready system"
+
+[[input.files]]
+path = "pycabook-colophon/index.html"
+url = "pycabook-colophon/"
+title = "Colophon"
+
+[[input.files]]
+path = "pycabook-introduction/index.html"
+url = "pycabook-introduction/"
+title = "Introduction"
+
