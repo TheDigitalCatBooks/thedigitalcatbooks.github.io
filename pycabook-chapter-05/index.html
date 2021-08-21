@@ -19,24 +19,15 @@
     <link rel="stylesheet" href="/theme/css/main.min.css?acc8318d">
     <link href="/images/global/favicon.jpg" rel="icon">
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74364524-3"></script>
-    <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     
-     gtag('config', 'UA-74364524-3');
-    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWX2B0F816"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
     <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
-     
-     gtag('config', 'G-XWX2B0F816');
+
+     gtag('config', 'G-V9QBPJ9XS1');
     </script>
   </head>
 
@@ -703,7 +694,7 @@
 </pre></div>
 </div></div><p>Please note that I'm using a variable named <code>request_object</code> here to avoid clashing with the fixture <code>request</code> provided by <code>pytest-flask</code>. While <code>request</code> contains the HTTP request sent to the web framework by the browser, <code>request_object</code> is the request we send to the use case.</p><div class="admonition note"><i class="fa fa-github"></i><div class="content"><div class="title">Source code</div><div><p><a href="https://github.com/pycabook/rentomatic/tree/ed2-c05-s07">https://github.com/pycabook/rentomatic/tree/ed2-c05-s07</a></p></div></div></div><h3 id="the-repository">The repository</h3><p>If we run the Flask development webserver now and try to access the endpoint <code>/rooms</code>, we will get a nice response that says</p><div class="code"><div class="content"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SystemError&quot;</span><span class="p">,</span> <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;TypeError: list() got an unexpected keyword argument &#39;filters&#39;&quot;</span><span class="p">}</span>
 </pre></div>
-</div></div><p>and if you look at the HTTP response<sup>[<a id="fr-13752504" href="#fd-13752504">1</a>]</sup> you can see an HTTP 500 error, which is exactly the mapping of our <code>SystemError</code> use case error, which in turn signals a Python exception, which is in the <code>message</code> part of the error.</p><p>This error comes from the repository, which has not been migrated to the new API. We need then to change the method <code>list</code> of the class <code>MemRepo</code> to accept the parameter <code>filters</code> and to act accordingly. Pay attention to this point. The filters might have been considered part of the business logic and implemented in the use case itself, but we decided to leverage what the storage system can do, so we moved filtering in that external system. This is a reasonable choice as databases can usually perform filtering and ordering very well. Even though the in-memory storage we are currently using is not a database, we are preparing to use a real external storage.</p><p>The new version of repository tests is</p><div class="code"><div class="title"><code>tests/repository/test_memrepo.py</code></div><div class="content"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+</div></div><p>and if you look at the HTTP response<sup>[<a id="fr--3011788" href="#fd--3011788">1</a>]</sup> you can see an HTTP 500 error, which is exactly the mapping of our <code>SystemError</code> use case error, which in turn signals a Python exception, which is in the <code>message</code> part of the error.</p><p>This error comes from the repository, which has not been migrated to the new API. We need then to change the method <code>list</code> of the class <code>MemRepo</code> to accept the parameter <code>filters</code> and to act accordingly. Pay attention to this point. The filters might have been considered part of the business logic and implemented in the use case itself, but we decided to leverage what the storage system can do, so we moved filtering in that external system. This is a reasonable choice as databases can usually perform filtering and ordering very well. Even though the in-memory storage we are currently using is not a database, we are preparing to use a real external storage.</p><p>The new version of repository tests is</p><div class="code"><div class="title"><code>tests/repository/test_memrepo.py</code></div><div class="content"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
 
 <span class="kn">from</span> <span class="nn">rentomatic.domain.room</span> <span class="kn">import</span> <span class="n">Room</span>
 <span class="kn">from</span> <span class="nn">rentomatic.repository.memrepo</span> <span class="kn">import</span> <span class="n">MemRepo</span>
