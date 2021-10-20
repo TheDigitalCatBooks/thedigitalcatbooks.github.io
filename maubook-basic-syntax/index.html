@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Basic syntax</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Basic syntax">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Basic syntax" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Basic syntax</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>Some of the newer ones are having trouble because they never really mastered some basic techniques, but they’re working hard and improving.</p><cite><p>Orson Scott Card, <em>Ender's Game</em> (1985)</p></cite></blockquote><p>This and the following chapters will give you an overview of the basic syntax for paragraphs, styles, and inline elements like links and images. If you are familiar with either Markdown or Asciidoctor none of these will be a surprise to you, but I will describe everything assuming the reader doesn't know any markup language.</p><p>I will assume you followed the instructions in the previous chapter and know how to run Mau in a stand-alone fashion, or that you are running it in Pelican. Either way, I will refer to generic input and output, meaning respectively the Mau source and the HTML final result. I will show the source code in a block like this</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is Mau source code
+</pre></div>
+</div></div><p>If useful, the resulting HTML code will be shown in a block like this</p><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The resulting HTML code<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><p>The rendered version of the resulting HTML will be shown with an aside like</p><div class="mau"><div class="content"><p>This is the rendered output</p></div></div><p>Please keep in mind that the resulting HTML I will show is rendered using this website's CSS, so some of the styles might differ when you open your output file with your browser.</p><p>Please also note that I will skip the HTML boilerplate to keep examples compact and readable. When you see a block with the resulting HTML like</p><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The resulting HTML code<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><p>the full output is actually</p><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>The resulting HTML code<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><p>Finally, remember that both Markdown and Asciidoctor have a fixed rendering, while the output in Mau is ruled by templates. What you see in the output HTML and in the rendered boxes is the result of Mau's default templates, but those can be overrided at any time, as we will see in a later chapter.</p><h2 id="paragraphs">Paragraphs<a class="headerlink" href="#paragraphs" title="Permanent link">¶</a></h2><p>Mau converts an input text file into something more complicated, usually written using HTML. Mau performs this in a line-by-line fashion, so you should always assume that a newline terminates the current element.</p><p>The simplest element in Mau is a line of text that forms a paragraph</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is a line of text.
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>This is a line of text.</p></div></div><hr><p>Adjacent lines of text are automatically joined into a single paragraph, so both</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is a sentence. And another sentence.
+</pre></div>
+</div></div><p>and </p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is a sentence.
+And another sentence.
+</pre></div>
+</div></div><p>will be rendered as</p><div class="mau"><div class="content"><p>This is a sentence. And another sentence.</p></div></div><hr><p>To separate paragraphs you need to insert one or more empty lines. For example</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is a sentence.
+
+And another sentence.
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>This is a sentence.</p>
+<p>And another sentence.</p></div></div><h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">¶</a></h2><p>Mau supports both single-line and multi-line comments. A single line comment uses double slashes</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is a sentence.
+
+And another sentence.
+
+// This is a comment and won&#39;t be rendered
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>This is a sentence.</p>
+<p>And another sentence.</p></div></div><hr><p>Multi-line comments are surrounded by four slashes on a separate line</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>This is a sentence.
+
+And another sentence.
+
+////
+This is also a comment
+but it&#39;s spread on
+multiple lines
+for fun and to be a
+little more readable
+////
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>This is a sentence.</p>
+<p>And another sentence.</p></div></div><h2 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">¶</a></h2><p>As we will see later, some advanced commands in Mau accept arguments, which are not too different from standard function arguments in programming languages. The most important thing to remember is that Mau values are always strings, so arguments do not really have types.</p><p>Arguments can appear between round brackets <code>()</code>, square brackets <code>[]</code>, or directly after a command, depending on the context. This will be clearly specified in each section when arguments are discussed.</p><p>Arguments can be unnamed or named. An unnamed argument has just a value, for example <code>html</code>, while a named one has a key and a value linked by an equal sign, like <code>language=html</code>. There can't be a space between the key and the value, so an argument like <code>language = html</code> is invalid.</p><hr><p>Multiple arguments are separated by commas, optionally followed by one or more spaces. So, <code>source,html</code> and <code>source, html</code> are both valid, and the same is valid for named arguments, as <code>source,language=html</code> and <code>source, language=html</code> are equally accepted by the parser.</p><p>In the documentation, arguments will be given uppercase (e.g. <code>TYPE</code>), and named ones will followed by an equal sign (e.g. <code>LANGUAGE=</code>). You can avoid specifying the key if you pass argument values respecting the order provided in the documentation. So, if in a certain context you have to provide <code>TYPE, LANGUAGE=</code> you can either give <code>source, html</code> or <code>source, language=html</code>. Unnamed arguments can never follow named ones.</p><hr><p>If an argument contains one or more spaces or commas you need to surround it with quotes, e.g. <code>attribution="J.R.R. Tolkien"</code> or <code>classes="class1,class2"</code>.</p><p>If the arguments are surrounded by braces you should use quotes also whenever the value contains the closing bracket. E.g. <code>(attribution="The (real) author")</code>. Here, the <code>)</code> after <code>real</code> would be considered the closing bracket if not surrounded by quotes.</p><p>If you need to pass quotes as value of an argument you need to escape them, e.g. <code>attribution="The so-called \"author\""</code>.</p><h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">¶</a></h2><p>Mau allows you to run functions called "macros". Macros always come in the form <code>[NAME](ARGUMENTS)</code> where <code>NAME</code> is the name of the macro and <code>ARGUMENTS</code> is a string formatted as described in the previous section. Built-in macros will be described in the following chapters.</p><h2 id="include-other-files">Include other files<a class="headerlink" href="#include-other-files" title="Permanent link">¶</a></h2><p>Mau has an initial support for including other files through the directive <code>#include</code>. Directives are special commands that are processed before the Mau code is properly parsed</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>::#include:/path/to/file.mau
+</pre></div>
+</div></div><p>Since the inclusion happens during the very first stages of the processing, you can also include files inside blocks (see the dedicated chapter).</p><div id="_footnotes"></div>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-installing-mau/">Installing Mau</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-text-formatting/">Text formatting</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T09:00:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Basic%20syntax&url=https%3A//www.thedigitalcatbooks.com/maubook-basic-syntax/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-basic-syntax/&title=Basic%20syntax&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-basic-syntax/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Basic%20syntax&u=https%3A//www.thedigitalcatbooks.com/maubook-basic-syntax/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Basic%20syntax&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-basic-syntax/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-basic-syntax/&title=Basic%20syntax" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 3 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+      </ul>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

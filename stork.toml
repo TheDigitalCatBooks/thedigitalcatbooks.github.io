@@ -8,6 +8,81 @@ url = "pages/about.html"
 title = "About"
 
 [[input.files]]
+path = "maubook-mau-elements-and-nodes/index.html"
+url = "maubook-mau-elements-and-nodes/"
+title = "Mau elements and nodes"
+
+[[input.files]]
+path = "maubook-basic_templates/index.html"
+url = "maubook-basic_templates/"
+title = "Basic templates"
+
+[[input.files]]
+path = "maubook-block-engines-and-custom-definitions/index.html"
+url = "maubook-block-engines-and-custom-definitions/"
+title = "Block engines and custom definitions"
+
+[[input.files]]
+path = "maubook-source-code-blocks/index.html"
+url = "maubook-source-code-blocks/"
+title = "Source code blocks"
+
+[[input.files]]
+path = "maubook-blocks-built-in-types-and-other-features/index.html"
+url = "maubook-blocks-built-in-types-and-other-features/"
+title = "Blocks: built-in types and other features"
+
+[[input.files]]
+path = "maubook-blocks/index.html"
+url = "maubook-blocks/"
+title = "Blocks"
+
+[[input.files]]
+path = "maubook-images/index.html"
+url = "maubook-images/"
+title = "Images"
+
+[[input.files]]
+path = "maubook-lists-and-footnotes/index.html"
+url = "maubook-lists-and-footnotes/"
+title = "Lists and footnotes"
+
+[[input.files]]
+path = "maubook-variables/index.html"
+url = "maubook-variables/"
+title = "Variables"
+
+[[input.files]]
+path = "maubook-headers/index.html"
+url = "maubook-headers/"
+title = "Headers"
+
+[[input.files]]
+path = "maubook-links/index.html"
+url = "maubook-links/"
+title = "Links"
+
+[[input.files]]
+path = "maubook-text-formatting/index.html"
+url = "maubook-text-formatting/"
+title = "Text formatting"
+
+[[input.files]]
+path = "maubook-basic-syntax/index.html"
+url = "maubook-basic-syntax/"
+title = "Basic syntax"
+
+[[input.files]]
+path = "maubook-installing-mau/index.html"
+url = "maubook-installing-mau/"
+title = "Installing Mau"
+
+[[input.files]]
+path = "maubook-introduction/index.html"
+url = "maubook-introduction/"
+title = "Introduction"
+
+[[input.files]]
 path = "pycabook-about-the-book/index.html"
 url = "pycabook-about-the-book/"
 title = "About the book"

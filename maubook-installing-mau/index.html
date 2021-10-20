@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Installing Mau</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Installing Mau">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Installing Mau" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Installing Mau</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>“I’ll tell you. I’m going to install a visiplate right over my desk. Right on the wall over there, see!”</p><cite><p>Isaac Asimov, <em>I, Robot</em> (1950)</p></cite></blockquote><p>In this chapter I will show you how to install Mau both as a stand-alone tool and as a plugin for Pelican. The only requirements are a working Python3 installation and a virtual environment.</p><p>While Python comes preinstalled in several operating systems these days, you can find detailed instructions on how to install it on the Python official website. Virtual environments are covered in the official documentation, but you might want to also explore tools to manage them, like pyenv etc. These are however not mandatory to run Mau.</p><h2 id="install-stand-alone-mau">Install stand-alone Mau<a class="headerlink" href="#install-stand-alone-mau" title="Permanent link">¶</a></h2><p>Mau is available on PyPI at <a href="https://pypi.org/project/mau/">https://pypi.org/project/mau/</a> and to install it you just need to run</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>pip install mau
+</pre></div>
+</div></div><p>At this point you should have the command line tool <code>mau</code> available. You can test it with</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau --version
+</pre></div>
+</div></div><p>This book covers Mau v2.x. If you are still using Mau 1.x please consider migrating to the new version. The README file contains the list of incompatibilities between the two versions, which is fortunately short.</p><h2 id="use-stand-alone-mau">Use stand-alone Mau<a class="headerlink" href="#use-stand-alone-mau" title="Permanent link">¶</a></h2><p>You can get help directly on the command line running</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau --help
+</pre></div>
+</div></div><p>The simplest command line for Mau is</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau -i INPUT.mau
+</pre></div>
+</div></div><p>that reads the Mau source file <code>INPUT.mau</code> and converts it into HTML saving the output in a file called accordingly. Mau will strip the extension <code>.mau</code> and replace it with <code>.html</code>.</p><p>If you want to specify the output format and the name of the output file you can use the two options <code>-f</code> and <code>-o</code></p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau -f FORMAT -i INPUT -o OUTPUT
+</pre></div>
+</div></div><p>where <code>FORMAT</code> is one of the output formats that Mau supports (currently <code>html</code>, <code>asciidoctor</code>, or <code>markua</code>), and both <code>INPUT</code> and <code>OUTPUT</code> are full paths, extensions included.</p><h3 id="example">Example</h3><p>Create the file <code>test.mau</code> in the current directory with this content</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>= A test
+
+This is a test for the Mau markup processor.
+</pre></div>
+</div></div><p>Now you can run</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau -i test.mau
+</pre></div>
+</div></div><p>or</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau -f html -i test.mau -o test.html
+</pre></div>
+</div></div><p>That will parse the content of <code>test.mau</code> and render it as HTML into <code>test.html</code>. The content of that file is</p><div class="code code-html"><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a-test&quot;</span><span class="p">&gt;</span>A test<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a test for the Mau markup processor.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><p>(minus the formatting which was added here for clarity)</p><p>You can now open the output file with your browser</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>firefox test.html
+</pre></div>
+</div></div><p>and enjoy your first document created with Mau.</p><h2 id="the-configuration-file">The configuration file<a class="headerlink" href="#the-configuration-file" title="Permanent link">¶</a></h2><p>Mau supports a configuration file written in YAML that can be loaded with the option <code>-c</code></p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>mau -c config.yml -f html -i test.mau -o test.html
+</pre></div>
+</div></div><p>Each value defined in the config file is stored as a variable under the namespace <code>mau</code>, and can be used in the Mau source. See the section about variables to know more about this.</p><h2 id="using-mau-in-pelican">Using Mau in Pelican<a class="headerlink" href="#using-mau-in-pelican" title="Permanent link">¶</a></h2><p>You can use Mau to write posts and pages in Pelican. First you need to install the plugin that enables it</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>pip install pelican-mau-reader
+</pre></div>
+</div></div><p>You can see the updated documentation about the plugin on the project page at <a href="https://github.com/pelican-plugins/mau-reader">https://github.com/pelican-plugins/mau-reader</a> but you will find everything you need in this book as well.</p><p>The basic usage of the plugin is simple. Every file in your content directory that ends with <code>.mau</code> will be processed by it, and you need to specify metadata using Mau's variables under the namespace <code>pelican</code>. For example</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>:pelican.title:This is a post written with Mau
+:pelican.date:2021-02-17 13:00:00
+:pelican.modified:2021-02-17 14:00:00
+:pelican.category:tests
+:pelican.tags:foo, bar, foobar
+:pelican.summary:I have a lot to write
+</pre></div>
+</div></div><p>The syntax <code>:name:value</code> is used by Mau to create variables and you can learn more about it in the dedicated chapter.</p><div id="_footnotes"></div>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-introduction/">Introduction</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-basic-syntax/">Basic syntax</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T08:30:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Installing%20Mau&url=https%3A//www.thedigitalcatbooks.com/maubook-installing-mau/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-installing-mau/&title=Installing%20Mau&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-installing-mau/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Installing%20Mau&u=https%3A//www.thedigitalcatbooks.com/maubook-installing-mau/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Installing%20Mau&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-installing-mau/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-installing-mau/&title=Installing%20Mau" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 2 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+      </ul>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

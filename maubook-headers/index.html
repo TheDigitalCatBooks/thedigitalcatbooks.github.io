@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Headers</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Headers">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Headers" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Headers</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>The abbot gave him a brief glare and began reading. The silence was awkward. “You found this over in the ‘Unclassified’ section, I believe?” he asked after a few seconds.</p><cite><p>Walter M. Miller Jr., <em>A Canticle for Leibowitz</em> (1959)</p></cite></blockquote><p>To properly structure some text you need to divide it into sections and the best way to highlight sections is through headers. Mau supports them and automatically stores them in a table of context.</p><p>To create a header in Mau use the symbol <code>=</code> followed by the text of the header</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>= A very important section
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a-very-important-section&quot;</span><span class="p">&gt;</span>A very important section<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><div class="mau"><div class="content"><h1 id="a-very-important-section">A very important section<a class="headerlink" href="#a-very-important-section" title="Permanent link">¶</a></h1></div></div><p>As you can see Mau converts it into a tag <code>h1</code> and automatically assigns an ID to it. The level of the header is ruled by the number of <code>=</code> symbols that you use. So, to create a header of level 3 you can write</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>=== A less important section
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a-less-important-section&quot;</span><span class="p">&gt;</span>A less important section<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><div class="mau"><div class="content"><h3 id="a-less-important-section">A less important section</h3></div></div><h2 id="headers-and-toc">Headers and TOC<a class="headerlink" href="#headers-and-toc" title="Permanent link">¶</a></h2><p>Mau stores all headers in a Table of Contents that can be created with the command <code>::toc:</code></p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>= Main section
+
+== Secondary section
+
+== Another secondary section
+
+=== A very specific section
+
+::toc:
+</pre></div>
+</div></div><div class="mau"><div class="content"><h1 id="main-section">Main section<a class="headerlink" href="#main-section" title="Permanent link">¶</a></h1><h2 id="secondary-section">Secondary section<a class="headerlink" href="#secondary-section" title="Permanent link">¶</a></h2><h2 id="another-secondary-section">Another secondary section<a class="headerlink" href="#another-secondary-section" title="Permanent link">¶</a></h2><h3 id="a-very-specific-section">A very specific section</h3><div><ul><li><a href="#main-section">Main section</a><ul><li><a href="#secondary-section">Secondary section</a></li><li><a href="#another-secondary-section">Another secondary section</a><ul><li><a href="#a-very-specific-section">A very specific section</a></li></ul></li></ul></li></ul></div></div></div><p>You can avoid including a specific header in the TOC using a <code>!</code> after the last <code>=</code></p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>= Main section
+
+== Secondary section
+
+===! This header is not in the TOC
+
+::toc:
+</pre></div>
+</div></div><div class="mau"><div class="content"><h1 id="main-section">Main section<a class="headerlink" href="#main-section" title="Permanent link">¶</a></h1><h2 id="secondary-section">Secondary section<a class="headerlink" href="#secondary-section" title="Permanent link">¶</a></h2><h3 id="this-header-is-not-in-the-toc">This header is not in the TOC</h3><div><ul><li><a href="#main-section">Main section</a><ul><li><a href="#secondary-section">Secondary section</a></li></ul></li></ul></div></div></div><p>Pay attention that this removes the header from the TOC but doesn't remove the child headers, which will be attached to the previous header. A better way to selectively remove headers and their children from the TOC is to tag them and exclude them</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>= Section 1
+
+== Section 1.1
+
+[tags=notoc]
+== Section 1.2
+
+=== Section 1.2.1
+
+== Section 1.3
+
+::toc:exclude_tags=notoc
+</pre></div>
+</div></div><div class="mau"><div class="content"><h1 id="section-1">Section 1<a class="headerlink" href="#section-1" title="Permanent link">¶</a></h1><h2 id="section-1.1">Section 1.1<a class="headerlink" href="#section-1.1" title="Permanent link">¶</a></h2><h2 id="section-1.2">Section 1.2<a class="headerlink" href="#section-1.2" title="Permanent link">¶</a></h2><h3 id="section-1.2.1">Section 1.2.1</h3><h2 id="section-1.3">Section 1.3<a class="headerlink" href="#section-1.3" title="Permanent link">¶</a></h2><div><ul><li><a href="#section-1">Section 1</a><ul><li><a href="#section-1.1">Section 1.1</a></li><li><a href="#section-1.3">Section 1.3</a></li></ul></li></ul></div></div></div><p>This will exclude from the rendered TOC both <code>Section 1.2</code> and <code>Section 1.2.1</code>, but not <code>Section 1.3</code>.</p><p>Please note that you can pass multiple comma-separated tags to <code>exclude_tags</code>, e.g. <code>::toc:exclude_tags="tag1,tag2"</code>.</p><h2 id="anchors">Anchors<a class="headerlink" href="#anchors" title="Permanent link">¶</a></h2><p>Headers are automatically assigned an identifier by Mau, which is linked in the Table of Contents.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>= A very important section
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;a-very-important-section&quot;</span><span class="p">&gt;</span>A very important section<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><p>The identifier is NOT granted to be unique, as two headers with the same text would also have identical identifiers. The function that generates the identifier can be replaced when using Mau programmatically, providing it in the variable <code>mau.header_anchor_function</code>. See the sections about variables and about using Mau in your code for more information.</p>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-links/">Links</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-variables/">Variables</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T10:30:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Headers&url=https%3A//www.thedigitalcatbooks.com/maubook-headers/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-headers/&title=Headers&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-headers/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Headers&u=https%3A//www.thedigitalcatbooks.com/maubook-headers/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Headers&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-headers/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-headers/&title=Headers" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 6 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+      </ul>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

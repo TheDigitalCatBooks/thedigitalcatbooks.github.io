@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Introduction</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Introduction">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Introduction" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Introduction</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>A beginning is the time for taking the most delicate care that the balances are correct.</p><cite><p>Frank Herbert, <em>Dune</em> (1965)</p></cite></blockquote><p>Mau is a lightweight markup language heavily inspired by AsciiDoc that makes it a breeze to write blog posts or books. If you already know Markdown or AsciiDoc you already know which type of software Mau is, and you will quickly learn its syntax.</p><p>The main goal of Mau, however, is to provide a <em>customisable</em> markup language. While Mau's syntax is fixed by its implementation, its output is created through user-provided templates. This strategy gives the user great flexibility with no added complexity.</p><p>I currently use Mau to write posts for my blog <a href="https://www.thedigitalcatonline.com">The Digital Cat</a> and to write my book <a href="https://leanpub.com/clean-architectures-in-python">Clean Architectures in Python</a>. This documentation is also written using Mau. So, as you can see, the system is production-ready, and you can start using it today.</p><h2 id="the-story-so-far">The story so far<a class="headerlink" href="#the-story-so-far" title="Permanent link">¶</a></h2><p>Markdown is a great format, and I used it for all the posts in my blog since I started writing. Pelican, which is the static site generator that I use, supports Markdown out of the box, so it was extremely easy to start using it, and overall I had an enjoyable experience.</p><p>When the idea of a book about the clean architecture began to take shape in my mind, a quick survey of the platforms for self-publishing led me to LeanPub, which provides a good toolchain based on their Markdown dialect called <a href="http://markua.com/">Markua</a>. Being so similar to Markdown, the transition was seamless for me, and I could publish the first edition of the book without any issues.</p><p>In the meanwhile, my activity on the blog increased, and I started to feel the need to add features to my articles that weren't easily created with Markdown, such as adding a file name and callouts to the code blocks or adding admonitions. Sure, such things can be added using raw HTML, but that popped the bubble of the simple markup syntax, so I wasn't happy with that solution.</p><p>The same problems arose when I started working on the second version of the book, with some additional concerns. Since the book is freely available, I wanted to use the same source code to generate a website and be able to reuse the same features both in the resulting HTML and in the PDF.</p><p>I couldn't find a good way to create tips and warnings using Markdown. Recently, Python Markdown added a feature that allows specifying the file name for the source code, but the resulting HTML cannot easily be changed, making it difficult to achieve the graphical output I wanted through CSS. So, I started looking into other projects.</p><p>I tried <a href="https://pandoc.org/">Pandoc</a>, and a week spent trying to learn again that black magic called TeX was enough for me to decide that the system wasn't what I needed. My relationship with TeX/LaTeX has always been stormy: while I admire the system, the ingenuity, and <a href="https://yakshav.es/the-patron-saint-of-yakshaves/ ">the one-man show effort</a> behind TeX, the final result is a convoluted beast that is difficult to tame. It is also terribly undocumented!</p><p>The third system that I found was <a href="https://asciidoc-py.github.io/">AsciiDoc</a>, which started as a Python project, abandoned for a while and eventually resurrected by Dan Allen with <a href="https://asciidoctor.org/">Asciidoctor</a>. AsciiDoc has a lot of features and I consider it superior to Markdown, but Asciidoctor is a Ruby program, and this made it difficult for me to use it. In addition, the standard output of Asciidoctor is a nice single HTML page but again customising it is a pain. I eventually created the site of the book using it, but adding my Google Analytics code and a <code>sitemap.xml</code> to the HTML wasn't trivial, not to mention customising the look of elements such as admonitions.</p><p>In the end, I wasn't completely happy with Asciidoctor, and once again I started looking around to see if there was something that matched my requirements.</p><h2 id="what-i-was-looking-for">What I was looking for<a class="headerlink" href="#what-i-was-looking-for" title="Permanent link">¶</a></h2><p>In a nutshell, this is what I was hoping to find:</p><ul><li>A simple markup syntax [Markdown, Markua, Asciidoctor]</li><li>A stand-alone implementation that I can run locally [Markdown, Asciidoctor]</li><li>A Python implementation that can be used from Pelican [Markdown]</li><li>Support for admonitions and callouts [Asciidoctor]</li><li>PDF output [Asciidoctor]</li><li>Highly configurable HTML output []</li></ul><p>As you can see none of the systems could tick all the boxes, and all of them are missing a way to easily change the output of the rendering.</p><h2 id="what-i-did">What I did<a class="headerlink" href="#what-i-did" title="Permanent link">¶</a></h2><p>Since no existing tool was matching my requirements I did what people like me do when they lack a tool. I wrote it myself!</p><p>I have been studying compilers all my life, even though I can by no means be called an expert. I have a <a href="https://www.thedigitalcatonline.com/blog/2017/05/09/a-game-of-tokens-write-an-interpreter-in-python-with-tdd-part-1/">series of posts</a> on my blog where I write an interpreter in Python, based on the <a href="https://ruslanspivak.com/lsbasi-part1/">amazing work of Ruslan Spivak</a>, so I thought that I might have at least tried to create a Python interpreter for Asciidoctor's syntax since the original AsciiDoc code was left unmaintained (apparently development started again later).</p><p>After one month I had a working tool that I successfully connected with Pelican and used to render some posts that I had already written in Markdown. I don't consider the project revolutionary, but I can honestly say that the day I saw Mau working for the first time is one of the best days of my career as a software developer. At that point, Mau had already slightly diverged from the original idea, though.</p><p>While initially I was aiming to an implementation of AsciiDoctor's syntax, and retained a great deal of it, I took the opportunity to try a different path when it came to rendering. Having already successfully used Jinja2 in other contexts, I had this idea of using Jinja templates to render Mau's output, so that the user could either use the standard one or provide their own and thus easily customise the final result.</p><p>I later wrote a visitor (a rendering class) that converts Mau's input into AsciiDoctor or Markua, and even though it doesn't cover all the features of the two languages, it allowed me to use Mau to rewrite my book and publish it online while using the Markua output to feed Leanpub's processing chain that produces the PDF.</p><h2 id="where-we-are-now">Where we are now<a class="headerlink" href="#where-we-are-now" title="Permanent link">¶</a></h2><p>The short story is that Mau works, and as I already mentioned is used for both my blog and my books. Mau's features are</p><ul><li>A simple markup syntax</li><li>A stand-alone implementation that you can run locally on any system that supports Python3</li><li>A plugin for Pelican that allows you to use Mau to write blog posts and website pages</li><li>Full support for a good range of standard HTML features (paragraphs, lists, headers, ...) and for some advanced ones such as admonitions, code callouts, includes, and footnotes.</li><li>Extremely configurable output using Jinja2 templates</li></ul><p>It's missing stand-alone PDF creation, but this might come in the future.</p><p>I learned a lot writing Mau, and I'm happy that the whole idea proved worth the time I invested. I'd love to know that other people found it useful, so in this manual I will show you how to install and use Mau for your projects.</p><p>Thanks for giving Mau a try!</p><hr><p>Cover picture by <a href="https://unsplash.com/@plhnk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Paul Hanaoka</a> on <a href="https://unsplash.com/photos/URnWOJX8wW4">Unsplash</a>. Good pictures of Egyptian Mau cats are difficult to find, so I opted for another elegant and exotic breed, a Bengal.</p><div id="_footnotes"></div>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-installing-mau/">Installing Mau</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T08:00:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Introduction&url=https%3A//www.thedigitalcatbooks.com/maubook-introduction/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-introduction/&title=Introduction&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-introduction/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Introduction&u=https%3A//www.thedigitalcatbooks.com/maubook-introduction/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Introduction&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-introduction/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-introduction/&title=Introduction" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 1 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

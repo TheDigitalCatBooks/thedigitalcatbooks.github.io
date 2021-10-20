@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Source code blocks</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Source code blocks">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Source code blocks" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Source code blocks</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>The older authorities seemed rather more helpful than the newer ones, and Armitage concluded that the code of the manuscript was one of great antiquity, no doubt handed down through a long line of mystical experimenters.</p><cite><p>H.P. Lovecraft, <em>The Dunwich Horror</em> (1929)</p></cite></blockquote><p>For programmers, one of the most useful features of a markup language is that of adding source code blocks. Mau provides full support to source code highlighting, and allows you to highlight single lines and add callouts to the code to mark specific steps of the process or to add explanations.</p><h2 id="basic-source-blocks">Basic source blocks<a class="headerlink" href="#basic-source-blocks" title="Permanent link">¶</a></h2><p>Literal paragraphs and source code can be printed using blocks of type <code>source</code></p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>. Source code
+[source]
+----
+This is all literal.
+
+== This is not a header
+
+[These are not attributes]
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-text"><div class="title">Source code</div><div class="content"><div class="highlight"><pre><span></span>This is all literal.
+
+== This is not a header
+
+[These are not attributes]
+</pre></div>
+</div></div></div></div><hr><p>Highlighting is provided by <a href="https://pygments.org/">Pygments</a>, so you can specify the language for the highlighting using one of the <a href="https://pygments.org/languages/">supported languages</a>.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+def header_anchor(text, level):
+    return &quot;h{}-{}-{}&quot;.format(
+        level, quote(text.lower())[:20], str(id(text))[:8]
+    )  # pragma: no cover
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div></div></div></div><h2 id="callouts">Callouts<a class="headerlink" href="#callouts" title="Permanent link">¶</a></h2><p>Source blocks support callouts, that allow you to add notes to specific lines of code. Callouts are added at the end of the line between colons (e.g. <code>:1:</code>) the relative text is added to the secondary content of the block</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+def header_anchor(text, level)::1:
+    return &quot;h{}-{}-{}&quot;.format(
+        level, quote(text.lower())[:20], str(id(text))[:8]:2:
+    )  # pragma: no cover
+----
+1: The name of the function
+2: Some memory-related wizardry
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span> <span class="callout">1</span>
+    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span> <span class="callout">2</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div><div class="callouts"><table><tbody><tr><td><span class="callout">1</span></td><td>The name of the function</td></tr><tr><td><span class="callout">2</span></td><td>Some memory-related wizardry</td></tr></tbody></table></div></div></div></div><hr><p>Callouts are rendered with <code>span</code>s and the relative text is rendered in a table</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+a=5:1:
+----
+1: A simple assignment
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;source&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;highlight&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">span</span><span class="p">/&gt;</span>
+	<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;n&quot;</span><span class="p">&gt;</span>a<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;o&quot;</span><span class="p">&gt;</span>=<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mi&quot;</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;callout&quot;</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;callouts&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+	    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;callout&quot;</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+	  <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+	  <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>A simple assignment<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><hr><p>The default delimiter for callouts is the colon <code>:</code>, but if that clashes with the syntax of your language you can pick a different one with the attribute <code>callouts</code></p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source, python, callouts=&quot;|&quot;]
+----
+def header_anchor(text, level):|1|
+    return &quot;h{}-{}-{}&quot;.format(
+        level, quote(text.lower())[:20], str(id(text))[:8]|2|
+    )  # pragma: no cover
+----
+1: The name of the function
+2: Some memory-related wizardry
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span> <span class="callout">1</span>
+    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span> <span class="callout">2</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div><div class="callouts"><table><tbody><tr><td><span class="callout">1</span></td><td>The name of the function</td></tr><tr><td><span class="callout">2</span></td><td>Some memory-related wizardry</td></tr></tbody></table></div></div></div></div><hr><p>Callouts names are just strings, not manipulated by Mau, so you can use them out of order</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+def header_anchor(text, level)::1:
+    return &quot;h{}-{}-{}&quot;.format(:3:
+        level, quote(text.lower())[:20], str(id(text))[:8]:2:
+    )  # pragma: no cover
+----
+1: The name of the function
+2: Some memory-related wizardry
+3: This is the return value
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span> <span class="callout">1</span>
+    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="callout">3</span>
+        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span> <span class="callout">2</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div><div class="callouts"><table><tbody><tr><td><span class="callout">1</span></td><td>The name of the function</td></tr><tr><td><span class="callout">2</span></td><td>Some memory-related wizardry</td></tr><tr><td><span class="callout">3</span></td><td>This is the return value</td></tr></tbody></table></div></div></div></div><hr><p>Callouts are not limited to digits, you can use non-numeric labels</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+def header_anchor(text, level)::step1:
+    return &quot;h{}-{}-{}&quot;.format(:step3:
+        level, quote(text.lower())[:20], str(id(text))[:8]:step2:
+    )  # pragma: no cover
+----
+step1: The name of the function
+step2: Some memory-related wizardry
+step3: This is the return value
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span> <span class="callout">step1</span>
+    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="callout">step3</span>
+        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span> <span class="callout">step2</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div><div class="callouts"><table><tbody><tr><td><span class="callout">step1</span></td><td>The name of the function</td></tr><tr><td><span class="callout">step2</span></td><td>Some memory-related wizardry</td></tr><tr><td><span class="callout">step3</span></td><td>This is the return value</td></tr></tbody></table></div></div></div></div><hr><p>Callouts do not need to have a definition</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+def header_anchor(text, level)::1:
+    return &quot;h{}-{}-{}&quot;.format(
+        level, quote(text.lower())[:20], str(id(text))[:8]:2:
+    )  # pragma: no cover
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span> <span class="callout">1</span>
+    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span> <span class="callout">2</span>
+    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div></div></div></div><p>And you can reference them <span class="callout">1</span> in the text. Here, I used <code>[class](1, callout)</code> to create a <code>span</code> with the same class used in the source code, and have the same CSS style applied to it.</p><h2 id="highlight-lines">Highlight lines<a class="headerlink" href="#highlight-lines" title="Permanent link">¶</a></h2><p>You can highlight lines using a callout with the special name <code>@</code></p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python]
+----
+def header_anchor(text, level)::@:
+    return &quot;h{}-{}-{}&quot;.format(
+        level, quote(text.lower())[:20], str(id(text))[:8]:@:
+    )  # pragma: no cover
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+</span>    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="hll">        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span>
+</span>    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div></div></div></div><hr><p>Should you prefer to list the lines you want to highlight you can use Pygments directly, passing the configuration value <code>hl_lines</code> under the namespace <code>pygments</code></p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source,python,pygments.hl_lines=&quot;1,3&quot;]
+----
+def header_anchor(text, level):
+    return &quot;h{}-{}-{}&quot;.format(
+        level, quote(text.lower())[:20], str(id(text))[:8]
+    )  # pragma: no cover
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="code code-python"><div class="content"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">header_anchor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+</span>    <span class="k">return</span> <span class="s2">&quot;h</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="hll">        <span class="n">level</span><span class="p">,</span> <span class="n">quote</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())[:</span><span class="mi">20</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">text</span><span class="p">))[:</span><span class="mi">8</span><span class="p">]</span>
+</span>    <span class="p">)</span>  <span class="c1"># pragma: no cover</span>
+</pre></div>
+</div></div></div></div>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T13:30:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Source%20code%20blocks&url=https%3A//www.thedigitalcatbooks.com/maubook-source-code-blocks/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-source-code-blocks/&title=Source%20code%20blocks&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-source-code-blocks/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Source%20code%20blocks&u=https%3A//www.thedigitalcatbooks.com/maubook-source-code-blocks/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Source%20code%20blocks&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-source-code-blocks/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-source-code-blocks/&title=Source%20code%20blocks" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 12 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+      </ul>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

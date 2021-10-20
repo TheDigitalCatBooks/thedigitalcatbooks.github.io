@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Blocks: built-in types and other features</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Blocks: built-in types and other features">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Blocks: built-in types and other features" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Blocks: built-in types and other features</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>Over an inner wall he saw the pinnacles of strangely shaped towerlike structures. One of these towers was built in, or projected into the court in which he found himself, and a broad stair led up to it, along the side of the wall.</p><cite><p>Robert E. Howard, <em>The Pool of the Black One</em> (1933)</p></cite></blockquote><p>Mau provides some built-in block types that are rendered in a different way.</p><h2 id="quotes">Quotes<a class="headerlink" href="#quotes" title="Permanent link">¶</a></h2><p>The simplest block type that Mau provides is called <code>quote</code>. This block's content is the quote itself, while the secondary content is the source of the quote, commonly called attribution.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[quote]
+----
+Learn about the Force, Luke.
+----
+_Star Wars_, 1977
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Learn about the Force, Luke.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">cite</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Star Wars<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>, 1977<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><div class="mau"><div class="content"><blockquote><p>Learn about the Force, Luke.</p><cite><p><em>Star Wars</em>, 1977</p></cite></blockquote></div></div><hr><p>Mau 1.x used the key <code>attribution</code> to specify the source of a quote, and that is still available for backward compatibility.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[quote, attribution=&quot;Star Wars, 1977&quot;]
+----
+Learn about the Force, Luke.
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><blockquote><p>Learn about the Force, Luke.</p><cite>Star Wars, 1977</cite></blockquote></div></div><p>Please note however that this syntax does not support Mau code in the attribution, so for example you can't use styles.</p><h2 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Permanent link">¶</a></h2><p>Mau supports admonitions, special blocks that are meant to be rendered with an icon and a title like warnings, tips, or similar things.</p><p>The arguments of the block are <code>[admonition, CLASS, ICON, LABEL]</code>.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[admonition, source, &quot;fab fa-github&quot;, &quot;Source code&quot;]
+----
+This is my admonition
+----
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;admonition source&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fab fa-github&quot;</span><span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>Source code<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is my admonition<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="admonition source"><i class="fa fa-fab fa-github"></i><div class="content"><div class="title">Source code</div><div><p>This is my admonition</p></div></div></div></div></div><hr><h2 id="block-conditions">Block conditions<a class="headerlink" href="#block-conditions" title="Permanent link">¶</a></h2><p>You can conditionally render a block according to the result of a test. The test is expressed in the form <code>CONDITION:VARIABLE:[VALUE]</code> and is passed to the block through the attribute <code>condition</code>.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:render:yes
+
+[aside, condition=&quot;if:render:yes&quot;]
+----
+This will be rendered
+----
+
+[aside, condition=&quot;if:render:no&quot;]
+----
+This will not be rendered
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="aside"><div class="content"><p>This will be rendered</p></div></div></div></div><hr><p>You can use boolean values leaving out the <code>VALUE</code> part</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>:render:
+
+[aside, condition=&quot;if:render:&quot;]
+----
+This will be rendered
+----
+
+:!render:
+
+[aside, condition=&quot;if:render:&quot;]
+----
+This will not be rendered
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"><div class="aside"><div class="content"><p>This will be rendered</p></div></div></div></div><hr><p>You can reverse the condition using <code>ifnot</code></p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>:render:
+
+[aside, condition=&quot;ifnot:render:&quot;]
+----
+This will not be rendered
+----
+</pre></div>
+</div></div><div class="mau"><div class="content"></div></div><h2 id="block-classes">Block classes<a class="headerlink" href="#block-classes" title="Permanent link">¶</a></h2><p>You can add custom classes to a block using the attribute <code>classes</code>, which is a comma separated list of names. These classes will be then rendered according to the output format. For example, in HTML these will become CSS classes.</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>[aside, classes=&quot;myclass1,myclass2&quot;]
+----
+This is a block of type `aside` and a title
+----
+</pre></div>
+</div></div><div class="code code-html"><div class="title">HTML output</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;aside myclass1 myclass2 &quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a block of type <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>aside<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> and a title<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="including-content">Including content<a class="headerlink" href="#including-content" title="Permanent link">¶</a></h2><p>As mentioned in the chapter about basic syntax, Mau '#include' directive can be used at any point (at the beginning of the line), and this means that the content of the block can be generated including the content of an external file.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[aside]
+----
+::#include:/path/to/important_aside.mau
+----
+</pre></div>
+</div></div><p>This might be very useful for <code>source</code> blocks (see the dedicated chapter)</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>[source, python]
+----
+::#include:/path/to/myscript.py
+----
+</pre></div>
+</div></div>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-blocks/">Blocks</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-source-code-blocks/">Source code blocks</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T13:00:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Blocks%3A%20built-in%20types%20and%20other%20features&url=https%3A//www.thedigitalcatbooks.com/maubook-blocks-built-in-types-and-other-features/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-blocks-built-in-types-and-other-features/&title=Blocks%3A%20built-in%20types%20and%20other%20features&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-blocks-built-in-types-and-other-features/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Blocks%3A%20built-in%20types%20and%20other%20features&u=https%3A//www.thedigitalcatbooks.com/maubook-blocks-built-in-types-and-other-features/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Blocks%3A%20built-in%20types%20and%20other%20features&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-blocks-built-in-types-and-other-features/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-blocks-built-in-types-and-other-features/&title=Blocks%3A%20built-in%20types%20and%20other%20features" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 11 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+      </ul>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

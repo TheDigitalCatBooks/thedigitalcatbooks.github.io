@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Variables</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Variables">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Variables" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Variables</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>It was wrong to have a third party present when I confronted you. It introduced one variable too many. It is a mistake that must be paid for, I suppose.</p><cite><p>Isaac Asimov, <em>Second Foundation</em> (1953)</p></cite></blockquote><p>Mau supports variables of two types: strings and booleans. You can define variables at any point in a Mau file with the syntax <code>:NAME:VALUE</code> and then use it with <code>{NAME}</code>. For example</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:answer:42
+
+The Answer to the Ultimate Question of Life,
+the Universe, and Everything is {answer}.
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The Answer to the Ultimate Question of Life, the Universe, and Everything is 42.</p></div></div><hr><p>Variables can be used in several contexts. In paragraphs, headers, and footnotes they are useful to place constant strings that are repeated over and over and might need to be changed. Variables are replaced very early in the Mau translation process, so they can contain Mau code.</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:answer:*42*
+:wikipedia_link:[link](&quot;https://en.wikipedia.org/wiki/42_(number)&quot;)
+
+The Answer to the Ultimate Question of Life,
+the Universe, and Everything is {answer}.
+
+You can learn more about it here {wikipedia_link}
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The Answer to the Ultimate Question of Life, the Universe, and Everything is <strong>42</strong>.</p>
+<p>You can learn more about it here <a href="https://en.wikipedia.org/wiki/42_(number)">https://en.wikipedia.org/wiki/42_(number)</a></p></div></div><p>Variables can also be used in block definitions, see the chapter about blocks for more information.</p><hr><p>You can avoid variable replacement escaping the curly braces</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:answer:42
+
+The Answer to the Ultimate Question of Life,
+the Universe, and Everything is \{answer\}
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The Answer to the Ultimate Question of Life, the Universe, and Everything is {answer}</p></div></div><hr><p>As curly braces are used a lot in programming languages, Mau automatically escapes them when they are included in verbatim text</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:answer:42
+
+The Answer to the Ultimate Question of Life,
+the Universe, and Everything is `{answer}`
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The Answer to the Ultimate Question of Life, the Universe, and Everything is <code>{answer}</code></p></div></div><h2 id="boolean-variables">Boolean variables<a class="headerlink" href="#boolean-variables" title="Permanent link">¶</a></h2><p>Variables without a value will automatically become booleans. The default value is true, which will become <code>True</code> when printed</p><div class="code code-text"><div class="content"><div class="highlight"><pre><span></span>:flag:
+
+The flag is {flag}.
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The flag is True.</p></div></div><hr><p>You can create a false boolean variable negating it with an exclamation mark</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:!flag:
+
+The flag is {flag}.
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The flag is False.</p></div></div><p>Boolean variables are useful as flags in conditional blocks, see the chapter about blocks for more information.</p><h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">¶</a></h2><p>Variables can be created in a specific namespace using a dotted syntax</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:value:5
+:module.value:6
+
+The values are {value} and {module.value}.
+</pre></div>
+</div></div><div class="mau"><div class="content"><p>The values are 5 and 6.</p></div></div><hr><p>Mau's configuration values are available under the <code>mau</code> namespace (see the section about configuration for more information).</p><p>Namespaces are useful to communicate with external tools. For example, the Pelican metadata of this page are specified as</p><div class="code code-text"><div class="title">Mau source</div><div class="content"><div class="highlight"><pre><span></span>:pelican.title:Variables
+:pelican.slug:maubook-variables
+:pelican.series:Mau - A template-based markup language
+</pre></div>
+</div></div><p>which allows the Mau reader plugin to extract them and pass them to Pelican.</p>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-headers/">Headers</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+	<p class="prevnext-label">Next</p>
+	<p>
+	  <a href="/maubook-lists-and-footnotes/">Lists and footnotes</a>
+	</p>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T11:00:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Variables&url=https%3A//www.thedigitalcatbooks.com/maubook-variables/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-variables/&title=Variables&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-variables/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Variables&u=https%3A//www.thedigitalcatbooks.com/maubook-variables/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Variables&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-variables/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-variables/&title=Variables" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 7 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+      </ul>
+      
+      <h3>Next</h3>
+      <ul>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+        <li><a href="/maubook-mau-elements-and-nodes/">Mau elements and nodes</a></li>
+      </ul>
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>

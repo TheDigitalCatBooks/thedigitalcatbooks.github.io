@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>The Digital Cat Books - Mau elements and nodes</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='content-language' content='en-gb'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A website that hosts free books about computer science">
+<meta name="description" content="Mau elements and nodes">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@thedigicat" />
+<meta name="twitter:title" content="Mau elements and nodes" />
+<meta name="twitter:description" content="Read the full article on The Digital Cat Books" />
+<meta name="twitter:image" content="https://www.thedigitalcatbooks.com/images/maubook/card.jpg" />
+    <script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/theme/css/main.min.css?2d24403f">
+    <link href="/images/global/favicon.jpg" rel="icon">
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9QBPJ9XS1"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-V9QBPJ9XS1');
+    </script>
+  </head>
+
+  <body class="preload">
+    <div class="container">
+      <div class="sidebar navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+
+<section>
+  <header>
+    <h2>Pay what you want</h2>
+  </header>
+  <p>You can read the books and download the PDF versions for free. If you value my work and want to support me you can buy the PDF paying what you want. Thanks!</p>
+  <article class="card">
+    <a href="/pycabook-introduction/">
+      <img src="/images/pycabook/card.jpg" alt="pycabook/card" />
+    </a>
+    <div class="body">
+      <h2>Clean Architectures in Python</h2>
+      <div class="actions">
+        <a class="action" href="https://leanpub.com/clean-architectures-in-python">Buy the book</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+<section>
+  <header>
+    <h2>Get in touch</h2>
+  </header>
+  <ul class="contact">
+    <li><i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/thedigicat">Twitter</a></li>
+  </ul>
+</section>      </div>
+      <div class="page">
+	<header class="primary" >
+	  <button type="button">
+	    <i class="fas fa-bars"></i>
+	  </button>
+	  <p>The Digital Cat Books</p>
+	</header>
+	<div class="mobile-menu navigation">
+<nav>
+<div class="links">
+  <ul>
+    <li class="link"><a href="/index.html">Homepage</a></li>
+    <li class="link"><a href="/pages/about.html">About</a></li>
+  </ul>
+</div></nav>
+<section>
+  <header>
+    <h2>Categories</h2>
+  </header>
+<ul>
+  <li><a href="/category/misc.html">misc</a></li>
+</ul></section>
+<section>
+  <header>
+    <h2>Tags</h2>
+  </header>
+<ul class="tags">
+</ul></section>	</div>
+	
+<div class="page-content">
+  <header>
+    <p class="book-title">Mau - A template-based markup language</p>
+    <h1 class="section-title">Mau elements and nodes</h1>
+  </header>
+  
+  <div class="post-content">
+    <blockquote><p>Zane noted how artistically the elements of both carpet and machine had been integrated to make the device unidentifiable; this was a symbolic example, not a literal one. It had also been hastily done, for Luna had been home only a few hours.</p><cite><p>Piers Anthony, <em>On a Pale Horse</em> (1983)</p></cite></blockquote><p>This chapter contains the full documentation of each Mau node, which is the Python dictionary created for each Mau syntax element. For each node I will provide the name of the template (without the format extension), it's fields, and a brief description of each of them.</p><p>To simplify the use of this chapter I will list the templates in alphabetical order.</p><p>Some notes on fields and types.</p><ul><li>The most commong type for node fields is <code>string</code> that represents pure text.</li><li>The type <code>target</code> means that the content is in the target format. For example when rendering in HTML a field like <code>"content": target</code> means that using <code>{{ content }}</code> in the Jinja template will insert some HTML.</li><li>The type <code>boolean</code> is a Python boolean that can be used directly in Jinja <code>if</code> statements.</li><li>The type <code>list</code> means a list of strings. The type <code>list[TYPE]</code> means a list of values of the given <code>TYPE</code>.</li><li>The type <code>dict</code> means a dictionary whose keys and values are strings. Since block definitions can fix which fields are allowed, a syntax like <code>dict[key1, key2]</code> means a dictionary with keys <code>"key1"</code> and <code>"key2"</code>.</li><li>A value like <code>a | b | c</code> means that the value can only be one of the listed ones.</li><li>Each node receives the field <code>type</code> that is used to select the template.</li></ul><h2 id="block">Block<a class="headerlink" href="#block" title="Permanent link">¶</a></h2><p>This node represents a standard block. The fields <code>blocktype</code> and <code>engine</code> are used to find specific templates, see the dedicated chapter for details.</p><p>Template name: <code>block.html</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;blocktype&quot;: string
+&quot;content&quot;: target
+&quot;secondary_content&quot;: target
+&quot;classes&quot;: list
+&quot;engine&quot;: raw | source | mau | deafult
+&quot;preprocessor&quot;: none
+&quot;args&quot;: list
+&quot;kwargs&quot;: dict
+&quot;title&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">blocktype</span> <span class="cp">}}{%</span> <span class="k">if</span> <span class="nv">classes</span> <span class="cp">%}</span><span class="s"> </span><span class="cp">{{</span> <span class="nv">classes</span> <span class="cp">}}{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">if</span> <span class="nv">title</span> <span class="cp">%}</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="block-admonition">Block admonition<a class="headerlink" href="#block-admonition" title="Permanent link">¶</a></h2><p>Template name: <code>block-admonition</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;blocktype&quot;: string
+&quot;content&quot;: target
+&quot;secondary_content&quot;: target
+&quot;classes&quot;: list
+&quot;engine&quot;: raw | source | mau | deafult
+&quot;preprocessor&quot;: none
+&quot;args&quot;: list
+&quot;kwargs&quot;: dict[class, icon, label]
+&quot;title&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;admonition </span><span class="cp">{{</span> <span class="nv">kwargs.class</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">kwargs.icon</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">kwargs.label</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="block-quote">Block quote<a class="headerlink" href="#block-quote" title="Permanent link">¶</a></h2><p>Template name: <code>block-quote</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;blocktype&quot;: string
+&quot;content&quot;: target
+&quot;secondary_content&quot;: target
+&quot;classes&quot;: list
+&quot;engine&quot;: raw | source | mau | deafult
+&quot;preprocessor&quot;: none
+&quot;args&quot;: list
+&quot;kwargs&quot;: dict
+&quot;title&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+  <span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span>
+
+  <span class="p">&lt;</span><span class="nt">cite</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">kwargs.attribution</span> <span class="cp">%}</span>
+    <span class="cp">{{</span> <span class="nv">kwargs.attribution</span> <span class="cp">}}</span>
+    <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+    <span class="cp">{{</span> <span class="nv">secondary_content</span> <span class="cp">}}</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+  <span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="block-source">Block source<a class="headerlink" href="#block-source" title="Permanent link">¶</a></h2><p>Template name: <code>block-source</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;blocktype&quot;: string
+&quot;content&quot;: target
+&quot;secondary_content&quot;: target
+&quot;classes&quot;: list
+&quot;engine&quot;: raw | source | mau | deafult
+&quot;preprocessor&quot;: none
+&quot;args&quot;: list
+&quot;kwargs&quot;: dict[callouts]
+&quot;title&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">blocktype</span> <span class="cp">%}</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">blocktype</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">if</span> <span class="nv">title</span> <span class="cp">%}</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="cp">{%</span> <span class="k">if</span> <span class="nv">kwargs.callouts</span> <span class="cp">%}</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;callouts&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">for</span> <span class="nv">callout</span> <span class="k">in</span> <span class="nv">kwargs.callouts</span> <span class="cp">%}</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">callout</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">callout</span><span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+      <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="callout">Callout<a class="headerlink" href="#callout" title="Permanent link">¶</a></h2><p>This is the template used to inject a callout in the source code.</p><p>Template name: <code>callout</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;name&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;callout&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="class">Class<a class="headerlink" href="#class" title="Permanent link">¶</a></h2><p>Template name: <code>class</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;classes&quot;: list
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">classes</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="footnote-definition">Footnote definition<a class="headerlink" href="#footnote-definition" title="Permanent link">¶</a></h2><p>Template name: <code>footnote_def</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;refanchor&quot;: string
+&quot;defanchor&quot;: string
+&quot;number&quot;: string
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">defanchor</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#</span><span class="cp">{{</span> <span class="nv">refanchor</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">number</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="footnote-reference">Footnote reference<a class="headerlink" href="#footnote-reference" title="Permanent link">¶</a></h2><p>Template name: <code>footnote_ref</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;refanchor&quot;: string
+&quot;defanchor&quot;: string
+&quot;number&quot;: string
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>
+  [<span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">refanchor</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#</span><span class="cp">{{</span> <span class="nv">defanchor</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">number</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>]
+<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permanent link">¶</a></h2><p>Template name: <code>footnotes</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;entries&quot;: list[target]
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;_footnotes&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">entries</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="header">Header<a class="headerlink" href="#header" title="Permanent link">¶</a></h2><p>Template name: <code>header</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;value&quot;: string
+&quot;level&quot;: string
+&quot;anchor&quot;: string
+&quot;tags&quot;: list
+&quot;kwargs&quot;: dict
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h</span><span class="cp">{{</span> <span class="nv">level</span> <span class="cp">}}</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">anchor</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h</span><span class="cp">{{</span> <span class="nv">level</span> <span class="cp">}}</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="horizontal-rule">Horizontal rule<a class="headerlink" href="#horizontal-rule" title="Permanent link">¶</a></h2><p>Template name: <code>horizontal_rule</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">¶</a></h2><p>Template name: <code>image</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;uri&quot;: string
+&quot;alt_text&quot;: string
+&quot;width&quot;: string
+&quot;height&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;imageblock&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">uri</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">alt_text</span> <span class="cp">%}</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">alt_text</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span> <span class="p">/&gt;</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">title</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="inline-image">Inline image<a class="headerlink" href="#inline-image" title="Permanent link">¶</a></h2><p>Template name: <code>inline_image</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;uri&quot;: string
+&quot;alt_text&quot;: string
+&quot;width&quot;: string
+&quot;height&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;image&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">uri</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{%</span><span class="k">if</span> <span class="nv">alt_text</span> <span class="cp">%}</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">alt_text</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="link">Link<a class="headerlink" href="#link" title="Permanent link">¶</a></h2><p>Template name: <code>link</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;target&quot;: string
+&quot;text&quot;: string
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">target</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">text</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">¶</a></h2><p>Template name: <code>list</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;ordered&quot;: boolean
+&quot;items&quot;: list
+&quot;main_node&quot;: boolean
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">ordered</span> <span class="cp">%}</span><span class="nt">ol</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="nt">ul</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="p">&gt;</span>
+  <span class="cp">{{</span> <span class="nv">items</span> <span class="cp">}}</span>
+<span class="p">&lt;/</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">ordered</span> <span class="cp">%}</span><span class="nt">ol</span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="nt">ul</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="list-item">List item<a class="headerlink" href="#list-item" title="Permanent link">¶</a></h2><p>Template name: <code>list_item</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;level&quot;: string
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="paragraph">Paragraph<a class="headerlink" href="#paragraph" title="Permanent link">¶</a></h2><p>Template name: <code>paragraph</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;content&quot;: target
+&quot;args&quot;: list
+&quot;kwargs&quot;: dict
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="star">Star<a class="headerlink" href="#star" title="Permanent link">¶</a></h2><p>Template name: <code>star</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;value&quot;: string
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="toc">TOC<a class="headerlink" href="#toc" title="Permanent link">¶</a></h2><p>Template name: <code>toc</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;entries&quot;: list[target]
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">entries</span><span class="cp">%}</span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">entries</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="toc-entry">TOC entry<a class="headerlink" href="#toc-entry" title="Permanent link">¶</a></h2><p>Template name: <code>toc_entry</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;header&quot;: target
+&quot;children&quot;: list[target]
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#</span><span class="cp">{{</span> <span class="nv">header.anchor</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">header.value</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+  <span class="cp">{%</span> <span class="k">if</span> <span class="nv">children</span> <span class="cp">%}</span>
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">children</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="underscore">Underscore<a class="headerlink" href="#underscore" title="Permanent link">¶</a></h2><p>Template name: <code>underscore</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;value&quot;: string
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
+</pre></div>
+</div></div><h2 id="verbatim">Verbatim<a class="headerlink" href="#verbatim" title="Permanent link">¶</a></h2><p>Template name: <code>verbatim</code></p><div class="code code-text"><div class="title">Fields</div><div class="content"><div class="highlight"><pre><span></span>&quot;type&quot;: string
+&quot;value&quot;: string
+&quot;content&quot;: target
+</pre></div>
+</div></div><div class="code code-html+jinja"><div class="title">Default HTML template</div><div class="content"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">content</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+</pre></div>
+</div></div>
+  </div>
+
+  <footer>
+    <div class="prevnext">
+      <div class="prevnext-prev">
+	<p class="prevnext-label">Previous</p>
+	<p>
+	  <a href="/maubook-basic_templates/">Basic templates</a>
+	</p>
+      </div>
+
+      <div class="prevnext-next">
+      </div>
+    </div>
+
+    <div class="post-info">
+      <p>Last update: <time datetime="2021-10-19T15:00:00+01:00"> 19/10/2021</time></p>
+      <p class="tags">
+      </p>
+      <p class="share">Share on: <span><a class="" href="https://twitter.com/intent/tweet?text=Mau%20elements%20and%20nodes&url=https%3A//www.thedigitalcatbooks.com/maubook-mau-elements-and-nodes/&via=thedigicat" target="_blank" title="Share on Twitter"><i class="fab fa-twitter"></i> Twitter</a></span>
+<span><a class="" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thedigitalcatbooks.com/maubook-mau-elements-and-nodes/&title=Mau%20elements%20and%20nodes&summary=&source=https%3A//www.thedigitalcatbooks.com/maubook-mau-elements-and-nodes/" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a></span>
+<span><a class="" href="https://news.ycombinator.com/submitlink?t=Mau%20elements%20and%20nodes&u=https%3A//www.thedigitalcatbooks.com/maubook-mau-elements-and-nodes/" target="_blank" title="Share on HackerNews"><i class="fab fa-hacker-news"></i> HackerNews</a></span>
+<span><a class="" href="mailto:?subject=Mau%20elements%20and%20nodes&amp;body=https%3A//www.thedigitalcatbooks.com/maubook-mau-elements-and-nodes/" target="_blank" title="Share via Email"><i class="fas fa-envelope"></i> Email</a></span>
+<span><a class="" href="https://www.reddit.com/submit?url=https%3A//www.thedigitalcatbooks.com/maubook-mau-elements-and-nodes/&title=Mau%20elements%20and%20nodes" target="_blank" title="Share via Reddit"><i class="fab fa-reddit"></i> Reddit</a></span></p>    
+    </div>
+  </footer>
+  
+  <section class="links">
+    <header>
+      <h2>Section 15 of Mau - A template-based markup language</h2>
+    </header>
+    <div>
+      <h3>Previous</h3>
+      <ul>
+        <li><a href="/maubook-introduction/">Introduction</a></li>
+        <li><a href="/maubook-installing-mau/">Installing Mau</a></li>
+        <li><a href="/maubook-basic-syntax/">Basic syntax</a></li>
+        <li><a href="/maubook-text-formatting/">Text formatting</a></li>
+        <li><a href="/maubook-links/">Links</a></li>
+        <li><a href="/maubook-headers/">Headers</a></li>
+        <li><a href="/maubook-variables/">Variables</a></li>
+        <li><a href="/maubook-lists-and-footnotes/">Lists and footnotes</a></li>
+        <li><a href="/maubook-images/">Images</a></li>
+        <li><a href="/maubook-blocks/">Blocks</a></li>
+        <li><a href="/maubook-blocks-built-in-types-and-other-features/">Blocks: built-in types and other features</a></li>
+        <li><a href="/maubook-source-code-blocks/">Source code blocks</a></li>
+        <li><a href="/maubook-block-engines-and-custom-definitions/">Block engines and custom definitions</a></li>
+        <li><a href="/maubook-basic_templates/">Basic templates</a></li>
+      </ul>
+      
+    </div>
+  </section>
+
+  
+</div>
+
+      </div>
+    </div>
+    <script src="/theme/js/packed.js?46a8f903"></script>
+
+  </body>
+</html>
